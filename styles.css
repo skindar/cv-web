@@ -123,6 +123,57 @@ body::before {
   opacity: 0.7;
 }
 
+/* ============ TOP NAV (sticky) ============ */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 24px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  background: hsla(205, 35%, 7%, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topnav-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  text-decoration: none;
+}
+.topnav-diamond {
+  width: 11px; height: 11px;
+  transform: rotate(45deg);
+  background: var(--cyan);
+  box-shadow: 0 0 8px hsla(187, 80%, 55%, 0.7);
+}
+.nav-links { list-style: none; display: flex; gap: 4px; }
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--text-mute);
+  text-decoration: none;
+  padding: 6px 11px;
+  border-radius: 999px;
+  transition: color 0.25s var(--ease), background 0.25s var(--ease);
+}
+.nav-links a:hover { color: var(--text); }
+.nav-links a.is-active {
+  color: var(--cyan);
+  background: hsla(187, 74%, 48%, 0.14);
+}
+
 /* ============ HERO ============ */
 .hero {
   padding: 96px 0 56px;
@@ -228,6 +279,70 @@ body::before {
   border: 1px solid var(--panel-border);
 }
 .btn-ghost:hover { border-color: var(--violet); color: var(--violet); transform: translateY(-2px); }
+
+/* hero key-figure stats */
+.hero-stats {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 30px;
+  margin: 24px 0 28px;
+}
+.hero-stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-left: 14px;
+  border-left: 2px solid var(--panel-border);
+}
+.hero-stats li:nth-child(odd) { border-left-color: var(--cyan-deep); }
+.hero-stats li:nth-child(even) { border-left-color: var(--violet-deep); }
+.stat-num {
+  font-family: var(--mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cyan-soft);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.hero-stats li:nth-child(even) .stat-num { color: var(--violet); }
+.stat-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+/* hero quick-jump pills */
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 24px 0 8px;
+}
+.hero-pills a {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--text-mute);
+  text-decoration: none;
+  padding: 6px 13px;
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.hero-pills a:hover {
+  color: var(--text);
+  border-color: var(--cyan);
+  transform: translateY(-2px);
+}
+.pill-sep {
+  color: var(--text-dim);
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
 
 /* ============ COMPETENCIES ============ */
 .competencies-grid {
@@ -572,6 +687,13 @@ body::before {
   .timeline { padding-left: 28px; }
   .tl-node { left: -28px; }
   .competencies-grid, .skills-grid { grid-template-columns: 1fr; }
+  .topnav { padding: 8px 14px; }
+  .topnav-brand { display: none; }
+  .nav-links { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { white-space: nowrap; }
+  .hero-stats { gap: 12px 22px; }
+  .stat-num { font-size: 1.3rem; }
 }
 
 /* ============ REDUCED MOTION ============ */
@@ -590,4 +712,9 @@ body::before {
   .hero-summary, .tl-card li, .skill-group p, .project-card p, .edu-desc, .competency, .client-info p { color: #333; }
   .tl-card, .competency, .skill-group, .cert-list li, .edu, .project-card, .client-card { background: #fff; border: 1px solid #ccc; }
   .btn, .to-top { display: none; }
+  .topnav, .hero-pills { display: none; }
+  .hero-stats { gap: 10px 24px; }
+  .stat-num { color: #1a1a2e; }
+  .hero-stats li { border-left-color: #ccc !important; }
+  .stat-label { color: #666; }
 }

@@ -23,6 +23,18 @@
   <canvas id="graph" aria-hidden="true"></canvas>
   <div class="vignette" aria-hidden="true"></div>
 
+  <!-- Sticky section navigation -->
+  <nav class="topnav" aria-label="Sections">
+    <a class="topnav-brand" href="#top"><span class="topnav-diamond" aria-hidden="true"></span>VF</a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+    </ul>
+  </nav>
+
   <div class="container">
 
     <!-- ============ HERO ============ -->
@@ -40,11 +52,11 @@
         integrations. Terraform IaC, CI/CD, and observability for <strong>20+ services</strong>.
       </p>
 
-      <ul class="contact-row">
-        <li><a href="mailto:fedetsov@gmail.com">fedetsov@gmail.com</a></li>
-        <li><a href="https://linkedin.com/in/fedetsov" target="_blank" rel="noopener">linkedin.com/in/fedetsov</a></li>
-        <li><a href="https://skindar.github.io/cv-web" target="_blank" rel="noopener">skindar.github.io/cv-web</a></li>
-        <li class="contact-loc">Remote · B2B via Intend Technologies JDG, Poland</li>
+      <ul class="hero-stats" aria-label="Key figures">
+        <li><span class="stat-num">10+</span><span class="stat-label">years experience</span></li>
+        <li><span class="stat-num">5+</span><span class="stat-label">years GCP</span></li>
+        <li><span class="stat-num">40+</span><span class="stat-label">Terraform modules</span></li>
+        <li><span class="stat-num">20+</span><span class="stat-label">services observed</span></li>
       </ul>
 
       <div class="hero-actions">
@@ -52,8 +64,30 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
           Download CV (PDF)
         </a>
-        <a class="btn btn-ghost" href="#experience">View experience</a>
+        <a class="btn btn-ghost" href="https://skindar.github.io/cv-web" target="_blank" rel="noopener">
+          Portfolio
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
       </div>
+
+      <nav class="hero-pills" aria-label="Jump to section">
+        <a href="#experience">Experience</a>
+        <span aria-hidden="true" class="pill-sep">◆</span>
+        <a href="#clients">Clients</a>
+        <span aria-hidden="true" class="pill-sep">◆</span>
+        <a href="#projects">Projects</a>
+        <span aria-hidden="true" class="pill-sep">◆</span>
+        <a href="#skills">Skills</a>
+        <span aria-hidden="true" class="pill-sep">◆</span>
+        <a href="#credentials">Credentials</a>
+      </nav>
+
+      <ul class="contact-row">
+        <li><a href="mailto:fedetsov@gmail.com">fedetsov@gmail.com</a></li>
+        <li><a href="https://linkedin.com/in/fedetsov" target="_blank" rel="noopener">linkedin.com/in/fedetsov</a></li>
+        <li><a href="https://skindar.github.io/cv-web" target="_blank" rel="noopener">skindar.github.io/cv-web</a></li>
+        <li class="contact-loc">Remote · B2B via Intend Technologies JDG, Poland</li>
+      </ul>
     </header>
 
     <!-- ============ CORE COMPETENCIES ============ -->
@@ -189,6 +223,42 @@
             <p class="tl-stack">AWS (EC2, S3) · Jenkins · GitHub · Nginx · Elasticsearch · Kibana · Docker · Linux · Bash</p>
           </div>
         </li>
+
+        <li class="tl-item">
+          <span class="tl-node" aria-hidden="true"></span>
+          <div class="tl-card">
+            <div class="tl-head">
+              <h3 class="tl-role">Linux System Administrator</h3>
+              <span class="tl-period">Feb 2019 — Nov 2019</span>
+            </div>
+            <p class="tl-company">Ukrtelecom <span class="tl-loc">Kyiv, Ukraine</span></p>
+            <ul>
+              <li>Maintained computer networks and related computing environments — hardware, systems software, applications and all configurations.</li>
+              <li>Recovered CentOS servers after system failures — root-cause analysis, LVM management, filesystem repair.</li>
+              <li>Bash scripting for automation of routine administrative tasks and system monitoring.</li>
+              <li>Managed MySQL databases, NGINX web servers and load-balancing configurations.</li>
+            </ul>
+            <p class="tl-stack">CentOS · LVM · Bash · MySQL · NGINX · Load Balancing</p>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <span class="tl-node" aria-hidden="true"></span>
+          <div class="tl-card">
+            <div class="tl-head">
+              <h3 class="tl-role">Telecommunications Engineer</h3>
+              <span class="tl-period">May 2017 — Nov 2017</span>
+            </div>
+            <p class="tl-company">Intertelecom <span class="tl-loc">Kharkiv, Ukraine</span></p>
+            <ul>
+              <li>Serviced mobile BTS (Base Transceiver Station) equipment for CDMA network infrastructure.</li>
+              <li>Set and replaced telecom equipment at cell sites.</li>
+              <li>Installed radio-relay and sector antennas for network coverage expansion.</li>
+              <li>Updated configurations and firmware on telecom equipment.</li>
+            </ul>
+            <p class="tl-stack">CDMA · BTS · Radio Relay · Sector Antennas · Firmware</p>
+          </div>
+        </li>
       </ol>
     </section>
 
@@ -263,7 +333,7 @@
     </section>
 
     <!-- ============ CERTIFICATIONS + EDUCATION ============ -->
-    <section class="section split" aria-labelledby="creds-title">
+    <section class="section split" id="credentials" aria-labelledby="creds-title">
       <div class="split-col">
         <div class="section-head">
           <h2 id="creds-title" class="section-title">Certifications</h2>
@@ -321,5 +391,34 @@
   </div>
 
   <script src="graph.js" defer></script>
+  <script>
+    // Scroll-spy: highlight the top-nav link of the section in view.
+    (function () {
+      var links = document.querySelectorAll('.nav-links a');
+      var map = {};
+      links.forEach(function (a) {
+        var id = a.getAttribute('href').slice(1);
+        var sec = document.getElementById(id);
+        if (sec) map[id] = a;
+      });
+      var active = null;
+      var setActive = function (id) {
+        if (id === active) return;
+        if (active && map[active]) map[active].classList.remove('is-active');
+        if (id && map[id]) map[id].classList.add('is-active');
+        active = id;
+      };
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          // pick the entry closest to the top that is intersecting
+          var visible = entries
+            .filter(function (e) { return e.isIntersecting; })
+            .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+          if (visible[0]) setActive(visible[0].target.id);
+        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+        Object.keys(map).forEach(function (id) { obs.observe(document.getElementById(id)); });
+      }
+    })();
+  </script>
 </body>
 </html>
